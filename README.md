@@ -15,7 +15,7 @@ Converts any media into 16 kHz mono WAV via ffmpeg, transcribes it, and emits bo
 
 ---
 
-## Quick Start
+## Quick start
 
 ```bash
 # 1. Optional: create and activate a Python 3.11 venv
@@ -40,7 +40,7 @@ The command above processes a single file or every media file inside the supplie
 
 ---
 
-## CLI Reference
+## CLI reference
 
 | Flag | Description | Example / Default |
 | --- | --- | --- |
@@ -63,7 +63,7 @@ Other behavior:
 
 ---
 
-## Example Workflow
+## Example workflow
 
 1. Drop assorted `.mp3`, `.m4a`, `.mp4`, etc. files into `~/media`.
 2. Run:
