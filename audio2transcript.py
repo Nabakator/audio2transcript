@@ -30,7 +30,7 @@ def parse_args() -> argparse.Namespace:
         "-o",
         "--output-dir",
         type=Path,
-        default=Path("outputs"),
+        default=Path("output"),
         help="Directory where transcripts/subtitles (and temp WAVs) will be written.",
     )
     parser.add_argument(

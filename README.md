@@ -23,12 +23,12 @@ Converts any media into 16 kHz mono WAV via ffmpeg, transcribes it, and emits bo
 source .venv/bin/activate
 
 # 2. Install Python dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
+/opt/homebrew/bin/python3.11 pip install --upgrade pip
+/opt/homebrew/bin/python3.11 pip install -r requirements.txt
 
 # 3. Run the transcriber
-python audio2transcript.py /path/to/media_or_folder \
-  -o outputs \
+/opt/homebrew/bin/python3.11 audio2transcript.py /path/to/media_or_folder \
+  -o output \
   --model small \
   --device auto \
   --compute-type auto \
@@ -36,7 +36,7 @@ python audio2transcript.py /path/to/media_or_folder \
   --temperature 0.0
 ```
 
-The command above processes a single file or every media file inside the supplied directory, dropping transcripts/subtitles (and temporary WAVs) into `outputs/`.
+The command above processes a single file or every media file inside the supplied directory, dropping transcripts/subtitles (and temporary WAVs) into `output/`.
 
 ---
 
@@ -45,7 +45,7 @@ The command above processes a single file or every media file inside the supplie
 | Flag | Description | Example / Default |
 | --- | --- | --- |
 | `input_path` | Positional path to a media file or directory. Hidden files are skipped. | `python audio2transcript.py ~/Videos/talk.mp4` |
-| `-o, --output-dir` | Destination directory for `.txt`, `.srt`, and temp WAVs. Created if absent. | `--output-dir outputs` (default `outputs`) |
+| `-o, --output-dir` | Destination directory for `.txt`, `.srt`, and temp WAVs. Created if absent. | `--output-dir output` (default `output`) |
 | `-m, --model` | faster-whisper checkpoint to load. | Options: `tiny`, `base`, `small`, `medium`, `large-v3` (default `small`) |
 | `--device` | Execution device. `auto` tries CUDA first then CPU. | `--device cuda` or `--device cpu` (default `auto`) |
 | `--compute-type` | Precision/quantization mode. | Examples: `float16`, `int8`, `auto` (default `auto`) |
@@ -70,7 +70,7 @@ Other behavior:
    ```bash
    python audio2transcript.py ~/media -o transcripts --model base --device auto --compute-type auto --beam-size 3 --temperature 0.0
    ```
-3. Collect `~/media/<name>.txt` and `.srt` outputs under `transcripts/`.
+3. Collect `~/media/<name>.txt` and `.srt` output under `transcripts/`.
 
 You now have plain text transcripts and timestamped subtitles ready for editing or publishing—all without any cloud calls.
 
