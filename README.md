@@ -23,8 +23,8 @@ Converts any media into 16 kHz mono WAV via ffmpeg, transcribes it, and emits bo
 source .venv/bin/activate
 
 # 2. Install Python dependencies
-/opt/homebrew/bin/python3.11 pip install --upgrade pip
-/opt/homebrew/bin/python3.11 pip install -r requirements.txt
+/opt/homebrew/bin/python3.11 -m pip install --upgrade pip
+/opt/homebrew/bin/python3.11 -m pip install -r requirements.txt
 
 # 3. Run the transcriber
 /opt/homebrew/bin/python3.11 audio2transcript.py /path/to/media_or_folder \
